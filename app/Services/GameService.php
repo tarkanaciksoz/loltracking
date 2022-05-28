@@ -20,6 +20,6 @@ class GameService {
         /** @var GameServiceInterface $gameService */
         $gameService = new $gamePrefix();
 
-        return $gameService->profile($this->summonerRequest->serverName, $this->summonerRequest->summonerName);
+        return $gameService->profile($this->summonerRequest->serverName."1", $this->summonerRequest->summonerName);
     }
 }
