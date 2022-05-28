@@ -4,11 +4,13 @@
         <div class="col-2" id="profile-icon-area">
             <div class="row">
                 <div class="profile-icon-div">
-                    <img class="profile-icon" src="http://ddragon.leagueoflegends.com/cdn/11.23.1/img/profileicon/542.png"/>
+                    <img class="profile-icon" src="http://ddragon.leagueoflegends.com/cdn/12.10.1/img/profileicon/{{ $data->profileIconId }}.png"/>
                 </div>
             </div>
             <div class="row lvl-area">
-                <div class="summoner-level text-center">031 Level</div>
+                <div class="summoner-level text-center">
+                    {{ $data->summonerLevel }} Level
+                </div>
             </div>
         </div>
         <div class="col-10 summoner-name-area">
@@ -49,15 +51,15 @@
                                 <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknametext" style="height:100%; padding-left:0; padding-right:0;">
-                                        Platinum III
+                                        Challenger
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamelp" style="height:100%; padding-left:0; padding-right:0;">
-                                        (10 LP)
+                                        (674 LP)
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/Emblem_Platinum.png" alt="..." />
+                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_Challenger.png" alt="..." />
                             </div>
                             <div class="col-4">
                             <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
@@ -130,7 +132,7 @@
                                 <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknametext" style="height:100%; padding-left:0; padding-right:0;">
-                                        Platinum I
+                                        Master
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamelp" style="height:100%; padding-left:0; padding-right:0;">
                                         (40 LP)
@@ -138,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/Emblem_Platinum.png" alt="..." />
+                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_Master.png" alt="..." />
                             </div>
                             <div class="col-4">
                             <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">

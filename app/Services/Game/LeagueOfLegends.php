@@ -17,14 +17,14 @@ class LeagueOfLegends implements GameServiceInterface {
      */
     public function profile(string $server, string $summonerName): mixed
     {
-        $url       = sprintf('%s/%s', config('constants.api_url'), ApiConstants::SUMMONER_PROFILE);
+        $url       = sprintf('%s%s', config('constants.api_url'), ApiConstants::SUMMONER_PROFILE_ENDPOINT);
         $dataArray = [
-            'server' => $server."1",
+            'server' => $server,
             'userName' => $summonerName
         ];
 
-        $client = new ApiClientService();
-        $response = $client->setMethod(Constants::METHOD_GET)
+        $apiClient = new ApiClientService();
+        $response = $apiClient->setMethod(ApiConstants::METHOD_GET)
             ->setUrl($url)
             ->setData($dataArray)
             ->sendRequest();

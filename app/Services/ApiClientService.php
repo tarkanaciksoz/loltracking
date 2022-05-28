@@ -171,7 +171,7 @@ class ApiClientService
      * @throws \Exception
      */
     private function validateRequest(): void {
-        if (empty($this->method) || !in_array($this->method, Constants::ALLOWED_REQUEST_METHODS)) {
+        if (empty($this->method) || !in_array($this->method, ApiConstants::ALLOWED_REQUEST_METHODS)) {
             throw new \Exception("invalid method");
         } elseif (empty($this->url)) {
             throw new \Exception("invalid url");
