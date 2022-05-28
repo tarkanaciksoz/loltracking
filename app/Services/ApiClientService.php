@@ -65,7 +65,12 @@ class ApiClientService
      */
     public function setHeaders(array $headers): static
     {
-        $this->headers = $headers;
+        if(!empty($this->headers)) {
+            $this->headers = array_merge($this->headers, $headers);
+        } else {
+            $this->headers = $headers;
+        }
+        
         return $this;
     }
 
