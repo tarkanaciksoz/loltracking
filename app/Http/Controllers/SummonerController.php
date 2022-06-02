@@ -14,7 +14,7 @@ class SummonerController extends Controller
      * @return View
      */
     public function index(): View {
-        return parent::render(Constants::CLASS_NAME, __FUNCTION__);
+        return parent::render(Constants::SUMMONER_CLASS_NAME, __FUNCTION__);
     }
 
     /**
@@ -22,10 +22,9 @@ class SummonerController extends Controller
      * @return View
      */
     public function profile(SummonerRequest $request): View {
-        $lolService = new GameService(Constants::LEAGUE_OF_LEGENDS_NAME, $request);
-        $lolProfile = $lolService->getProfile();
-        //dd($lolProfile);
+        $gameService = new GameService(Constants::LEAGUE_OF_LEGENDS_NAME, $request);
+        $profileData = $gameService->getProfile();
 
-        return parent::render(Constants::CLASS_NAME, __FUNCTION__, $lolProfile);
+        return parent::render(Constants::SUMMONER_CLASS_NAME, __FUNCTION__, $profileData);
     }
 }
