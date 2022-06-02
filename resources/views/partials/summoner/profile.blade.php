@@ -19,7 +19,7 @@
                 <div class="col-12 sna-col"></div>
                 <div class="col-12 sn-col">
                     <h2 class="summoner-name">
-                        Muckmeister <!-- TARKAN - TODO : boşluk fix edilecek-->
+                        {{ $data->name }} <!-- TARKAN - TODO : boşluk fix edilecek-->
                     </h2>
                 </div>
                 <div class="col-12 sn-col">

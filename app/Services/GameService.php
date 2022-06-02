@@ -16,10 +16,12 @@ class GameService {
 
     public function getProfile() {
         $gamePrefix = sprintf('\App\Services\Game\%s', $this->game);
-
+        
         /** @var GameServiceInterface $gameService */
+
         $gameService = new $gamePrefix();
 
         return $gameService->profile($this->summonerRequest->serverName."1", $this->summonerRequest->summonerName);
     }
+    
 }
