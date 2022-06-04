@@ -5,9 +5,7 @@ namespace App\Services\Game;
 use App\Services\ApiClientResponse;
 use App\Services\ApiClientService;
 use App\Services\ApiConstants;
-use App\Services\Constants;
 use App\Services\GameServiceInterface;
-use Illuminate\Support\Facades\Http;
 
 class LeagueOfLegends implements GameServiceInterface {
     /**
@@ -38,6 +36,37 @@ class LeagueOfLegends implements GameServiceInterface {
                 'code'    => $result->Code,
             ]))->getData();
 
+        }
+
+        return $response->getData();
+    }
+
+    /**
+     * @param string $server
+     * @param string $encryptedSummonerId
+     * @return mixed
+     */
+    public function rankData(string $server, string $encryptedSummonerId): mixed {
+        $url       = sprintf('%s%s', config('constants.api_url'), ApiConstants::SUMMONER_RANK_DATA_ENDPOINT);
+        $dataArray = [
+            'server' => $server,
+            'id' => $encryptedSummonerId
+        ];
+
+        $client = new ApiClientService();
+        $response = $client->setMethod(ApiConstants::METHOD_GET)
+            ->setUrl($url)
+            ->setData($dataArray)
+            ->sendRequest();
+
+        if($response->getSuccess()) {
+            $result = json_decode($response->getData());
+            return (new ApiClientResponse([
+                'success' => $result->Success,
+                'message' => $result->Message,
+                'data'    => $result->Data,
+                'code'    => $result->Code,
+            ]))->getData();
         }
 
         return $response->getData();
