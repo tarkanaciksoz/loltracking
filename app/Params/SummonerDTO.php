@@ -55,31 +55,31 @@ class SummonerDTO
                 $this->setSummonerLevel($summonerInfo['summonerLevel']);
             }
         }elseif (is_object($summonerInfo)) {
-            if (property_exists('accountId', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'accountId')) {
                 $this->setAccountId($summonerInfo->accountId);
             }
 
-            if (property_exists('profileIconId', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'profileIconId')) {
                 $this->setProfileIconId($summonerInfo->profileIconId);
             }
 
-            if (property_exists('revisionDate', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'revisionDate')) {
                 $this->setRevisionDate($summonerInfo->revisionDate);
             }
 
-            if (property_exists('name', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'name')) {
                 $this->setName($summonerInfo->name);
             }
 
-            if (property_exists('id', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'id')) {
                 $this->setId($summonerInfo->id);
             }
 
-            if (property_exists('puuid', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'puuid')) {
                 $this->setPuuId($summonerInfo->puuid);
             }
 
-            if (property_exists('summonerLevel', $summonerInfo)) {
+            if (property_exists($summonerInfo, 'summonerLevel')) {
                 $this->setSummonerLevel($summonerInfo->summonerLevel);
             }
         }
