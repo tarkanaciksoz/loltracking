@@ -24,7 +24,7 @@ class ApiClientResponse
             $this->setSuccess(false);
             $this->setMessage($vars);
             $this->setData(null);
-            $this->setCode(400);
+            $this->setCode(ApiConstants::HTTP_STATUS_BAD_REQUEST);
         }elseif (is_array($vars)) {
             if (array_key_exists('success', $vars)) {
                 $this->setSuccess($vars['success']);
