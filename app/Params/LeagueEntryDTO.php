@@ -206,7 +206,7 @@ class LeagueEntryDTO
      * @return $this
      */
     public function setTier($tier): static {
-        $this->tier = $tier;
+        $this->tier = ucfirst(strtolower($tier));
         return $this;
     }
 

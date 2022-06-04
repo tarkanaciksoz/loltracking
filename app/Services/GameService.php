@@ -38,6 +38,10 @@ class GameService {
             }
         }
 
-        dd($summonerDTO, $leagueSoloQ, $leagueFlex);
+        return [
+            'summoner' => $summonerDTO,
+            'leagueSoloQ' => $leagueSoloQ,
+            'leagueFlex' => $leagueFlex,
+        ];
     }
 }
