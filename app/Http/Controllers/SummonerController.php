@@ -24,7 +24,7 @@ class SummonerController extends Controller
     public function profile(SummonerRequest $request): View {
         $gameService = new GameService(Constants::LEAGUE_OF_LEGENDS_NAME, $request);
         $profileData = $gameService->getProfile();
-
+        
         return parent::render(Constants::SUMMONER_CLASS_NAME, __FUNCTION__, $profileData);
     }
 }

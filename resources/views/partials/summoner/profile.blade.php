@@ -4,12 +4,12 @@
         <div class="col-2" id="profile-icon-area">
             <div class="row">
                 <div class="profile-icon-div">
-                    <img class="profile-icon" src="http://ddragon.leagueoflegends.com/cdn/12.10.1/img/profileicon/{{ $data->profileIconId }}.png"/>
+                    <img class="profile-icon" src="http://ddragon.leagueoflegends.com/cdn/12.10.1/img/profileicon/{{ $data['summoner']->getProfileIconId() }}.png"/>
                 </div>
             </div>
             <div class="row lvl-area">
                 <div class="summoner-level text-center">
-                    {{ $data->summonerLevel }} Level
+                    {{ $data['summoner']->getSummonerLevel() }} Level
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="col-12 sna-col"></div>
                 <div class="col-12 sn-col">
                     <h2 class="summoner-name">
-                        {{ $data->name }} <!-- TARKAN - TODO : boşluk fix edilecek-->
+                        {{ $data['summoner']->getName() }} <!-- TARKAN - TODO : boşluk fix edilecek-->
                     </h2>
                 </div>
                 <div class="col-12 sn-col">
@@ -51,21 +51,21 @@
                                 <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknametext" style="height:100%; padding-left:0; padding-right:0;">
-                                        Challenger
+                                        {{ $data['leagueSoloQ']->getTier() }} {{ $data['leagueSoloQ']->getRank() }}
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamelp" style="height:100%; padding-left:0; padding-right:0;">
-                                        (674 LP)
+                                        {{ $data['leagueSoloQ']->getLeaguePoints() }} LP
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_Challenger.png" alt="..." />
+                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_{{ $data['leagueSoloQ']->getTier() }}.png" alt="..." />
                             </div>
                             <div class="col-4">
                             <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknamewl" style="height:100%; padding-left:0; padding-right:0;">
-                                        570W / 430L
+                                        {{ $data['leagueSoloQ']->getWins() }} W / {{ $data['leagueSoloQ']->getLosses() }} L
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamewr" style="height:100%; padding-left:0; padding-right:0;">
                                         Win Rate : 57.0%
@@ -132,21 +132,21 @@
                                 <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknametext" style="height:100%; padding-left:0; padding-right:0;">
-                                        Master
+                                        {{ $data['leagueFlex']->getTier() }} {{ $data['leagueFlex']->getRank() }}
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamelp" style="height:100%; padding-left:0; padding-right:0;">
-                                        (40 LP)
+                                        {{ $data['leagueSoloQ']->getLeaguePoints() }} LP
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_Master.png" alt="..." />
+                                <img class="rank-icon-image text-center" src="http://localhost:8000/dist/assets/img/rankAmblems/Emblem_{{ $data['leagueFlex']->getTier() }}.png" alt="..." />
                             </div>
                             <div class="col-4">
                             <div class="col-12" style="height:65px; padding-left:0; padding-right:0;">
                                     <div class="col-12" style="height:70px; padding-left:0; padding-right:0;"></div>
                                     <div class="col-12 align-top text-center ranknamewl" style="height:100%; padding-left:0; padding-right:0;">
-                                         57W / 43L
+                                        {{ $data['leagueFlex']->getWins() }} W / {{ $data['leagueFlex']->getLosses() }} L
                                     </div>
                                     <div class="col-12 align-text-bottom text-center ranknamewr" style="height:100%; padding-left:0; padding-right:0;">
                                         Win Rate : 57.0%
