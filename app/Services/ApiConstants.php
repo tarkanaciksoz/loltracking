@@ -6,6 +6,7 @@ class ApiConstants
 {
     const SUMMONER_PROFILE   = "getSummonerInfo";
     const MATCH_HISTORY_LIST = "getMatchHistoryList";
+    const SUMMONER_RANK_DATA = "getRankData";
     const HTTP_STATUS_SUCCESS = 200;
 
     const METHOD_GET    = "get";

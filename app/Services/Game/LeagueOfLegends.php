@@ -28,7 +28,7 @@ class LeagueOfLegends implements GameServiceInterface {
             ->setUrl($url)
             ->setData($dataArray)
             ->sendRequest();
-        //dd($response);
+        
         if($response->getSuccess()) {
             $result = json_decode($response->getData());
             return (new ApiClientResponse([
@@ -37,6 +37,7 @@ class LeagueOfLegends implements GameServiceInterface {
                 'data'    => $result->Data,
                 'code'    => $result->Code,
             ]))->getData();
+            
         }
         
         return $response->getData();
