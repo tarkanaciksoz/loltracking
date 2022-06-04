@@ -8,10 +8,12 @@ use App\Params\SummonerDTO;
 class GameService {
 
     private string $game;
-    private SummonerRequest $summonerRequest;
+    private string $summonerName;
+    private string $server;
 
     public function __construct(string $game, SummonerRequest $summonerRequest) {
-        $this->summonerRequest = $summonerRequest;
+        $this->server          = $summonerRequest->serverName."1";
+        $this->summonerName    = $summonerRequest->summonerName;
         $this->game            = $game;
     }
 
@@ -20,10 +22,10 @@ class GameService {
 
         /** @var GameServiceInterface $gameService */
         $gameService  = new $gamePrefix();
-        $summonerInfo = $gameService->profile($this->summonerRequest->serverName."1", $this->summonerRequest->summonerName);
+        $summonerDTO  = new SummonerDTO($gameService->profile($this->server, $this->summonerName));
 
-        $summoner = new SummonerDTO($summonerInfo);
-        dd($summoner);
+        $rankData     = $gameService->rankData($this->server, $summonerDTO->getId());
+        dd($rankData, $summonerDTO);
     }
 
 }
