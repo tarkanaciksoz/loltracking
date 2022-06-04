@@ -70,7 +70,7 @@ class ApiClientService
         } else {
             $this->headers = $headers;
         }
-        
+
         return $this;
     }
 
