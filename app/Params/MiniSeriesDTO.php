@@ -7,14 +7,14 @@ class MiniSeriesDTO
     /** @var  int $losses */
     protected int $losses;
 
-    /** @var  int $progress */
-    protected int $progress;
+    /** @var  string $progress */
+    protected string $progress;
 
     /** @var  int $target */
     protected int $target;
 
-    /** @var  string $wins */
-    protected string $wins;
+    /** @var  int $wins */
+    protected int $wins;
 
     /**
      * @param $miniSeries
@@ -92,30 +92,24 @@ class MiniSeriesDTO
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getLosses(): int {
-        return $this->losses;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProgress(): int {
+    public function getProgress(): string {
         return $this->progress;
     }
 
     /**
      * @return int
      */
-    public function getTarget(): int {
+    public function getTarget(): int
+    {
         return $this->target;
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getWins(): string {
+    public function getWins(): int {
         return $this->wins;
     }
 }

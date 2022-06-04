@@ -2,50 +2,50 @@
 
 namespace App\Params;
 
-use MiniSeriesDTO;
+use App\Params\MiniSeriesDTO;
 
 class LeagueEntryDTO
 {
-    /** @var string $leagueId */
+    /** @var  string $leagueId */
     protected string $leagueId;
 
-    /** @var string $summonerId */
+    /** @var  string $summonerId */
     protected string $summonerId;
 
-    /** @var string summonerName */
+    /** @var  string summonerName */
     protected string $summonerName;
 
-    /** @var string $queueType */
+    /** @var  string $queueType */
     protected string $queueType;
 
-    /** @var string $tier */
+    /** @var  string $tier */
     protected string $tier;
 
-    /** @var string $rank */
+    /** @var  string $rank */
     protected string $rank;
 
-    /** @var int $leaguePoints */
+    /** @var  int $leaguePoints */
     protected int $leaguePoints;
 
-    /** @var int $wins */
+    /** @var  int $wins */
     protected int $wins;
 
-    /** @var int $losses */
+    /** @var  int $losses */
     protected int $losses;
 
-    /** @var bool $hotStreak */
+    /** @var  bool $hotStreak */
     protected bool $hotStreak;
 
-    /** @var bool $veteran */
+    /** @var  bool $veteran */
     protected bool $veteran;
 
-    /** @var bool $freshBlood */
+    /** @var  bool $freshBlood */
     protected bool $freshBlood;
 
-    /** @var bool $inactive */
+    /** @var  bool $inactive */
     protected bool $inactive;
 
-    /** @var MiniSeriesDTO $miniSeries */ // ! miniSeries DTO oluşturacaş Data tipi oluşturulan class olacak.
+    /** @var  MiniSeriesDTO $miniSeries */
     protected MiniSeriesDTO $miniSeries;
 
     public function __construct($leagueEntry = null) {
@@ -302,49 +302,98 @@ class LeagueEntryDTO
     /**
      * @return string
      */
-    public function getAccountId(): string {
-        return $this->accountId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProfileIconId(): int {
-        return $this->profileIconId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRevisionDate(): int {
-        return $this->revisionDate;
+    public function getLeagueId(): string {
+        return $this->leagueId;
     }
 
     /**
      * @return string
      */
-    public function getName(): string {
-        return $this->name;
+    public function getSummonerId(): string {
+        return $this->summonerId;
     }
 
     /**
      * @return string
      */
-    public function getId(): string {
-        return $this->id;
+    public function getSummonerName(): string {
+        return $this->summonerName;
     }
 
     /**
      * @return string
      */
-    public function getPuuId(): string {
-        return $this->puuId;
+    public function getQueueType(): string {
+        return $this->queueType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTier(): string {
+        return $this->tier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRank(): string {
+        return $this->rank;
     }
 
     /**
      * @return int
      */
-    public function getSummonerLevel(): int {
-        return $this->summonerLevel;
+    public function getLeaguePoints(): int {
+        return $this->leaguePoints;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWins(): int {
+        return $this->wins;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLosses(): int {
+        return $this->losses;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getHotStreak(): bool {
+        return $this->hotStreak;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getVetera(): bool {
+        return $this->veteran;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFreshBlood(): bool {
+        return $this->freshBlood;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getInactive(): bool {
+        return $this->inactive;
+    }
+
+    /**
+     * @return \App\Params\MiniSeriesDTO
+     */
+    public function getMiniSeries(): \App\Params\MiniSeriesDTO {
+        return $this->miniSeries;
     }
 }

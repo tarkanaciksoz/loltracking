@@ -4,25 +4,25 @@ namespace App\Params;
 
 class SummonerDTO
 {
-    /** @var string $accountId */
+    /** @var  string $accountId */
     protected string $accountId;
 
-    /** @var int $profileIconId */
+    /** @var  int $profileIconId */
     protected int $profileIconId;
 
-    /** @var int $revisionDate */
+    /** @var  int $revisionDate */
     protected int $revisionDate;
 
-    /** @var string $name */
+    /** @var  string $name */
     protected string $name;
 
-    /** @var string $id */
+    /** @var  string $id */
     protected string $id;
 
-    /** @var string $puuId */
+    /** @var  string $puuId */
     protected string $puuId;
 
-    /** @var int $summonerLevel */
+    /** @var  int $summonerLevel */
     protected int $summonerLevel;
 
     public function __construct($summonerInfo = null) {

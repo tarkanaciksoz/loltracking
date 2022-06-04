@@ -8,6 +8,9 @@ class ApiConstants
     const MATCH_HISTORY_LIST_ENDPOINT = "/getMatchHistoryList";
     const SUMMONER_RANK_DATA_ENDPOINT = "/getRankData";
 
+    const QUEUE_TYPE_RANKED_FLEX_SR    = "RANKED_FLEX_SR";
+    const QUEUE_TYPE_RANKED_SOLO_5x5   = "RANKED_SOLO_5x5";
+
     const HTTP_STATUS_SUCCESS = 200;
     const HTTP_STATUS_BAD_REQUEST = 400;
 

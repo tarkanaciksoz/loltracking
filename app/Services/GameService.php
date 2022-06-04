@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Http\Requests\SummonerRequest;
+use App\Params\LeagueEntryDTO;
 use App\Params\SummonerDTO;
 
 class GameService {
@@ -25,7 +26,18 @@ class GameService {
         $summonerDTO  = new SummonerDTO($gameService->profile($this->server, $this->summonerName));
 
         $rankData     = $gameService->rankData($this->server, $summonerDTO->getId());
-        dd($rankData, $summonerDTO);
-    }
 
+        $leagueFlex = $leagueSoloQ = new LeagueEntryDTO();
+        foreach($rankData as $rank) {
+            $tempRank = new LeagueEntryDTO($rank);
+
+            if($tempRank->getQueueType() == ApiConstants::QUEUE_TYPE_RANKED_SOLO_5x5) {
+                $leagueSoloQ = $tempRank;
+            }elseif($tempRank->getQueueType() == ApiConstants::QUEUE_TYPE_RANKED_FLEX_SR) {
+                $leagueFlex = $tempRank;
+            }
+        }
+
+        dd($summonerDTO, $leagueSoloQ, $leagueFlex);
+    }
 }
