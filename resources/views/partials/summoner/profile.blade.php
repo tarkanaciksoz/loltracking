@@ -9,7 +9,7 @@
             </div>
             <div class="row lvl-area">
                 <div class="summoner-level text-center">
-                    {{ $data['summoner']->getSummonerLevel() }} Level
+                    {{ $data['summoner']->getSummonerLevel() }} Level <!-- TODO: BURAK level aşağıya atıyor.  -->
                 </div>
             </div>
         </div>
